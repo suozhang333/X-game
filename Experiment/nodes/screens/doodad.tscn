@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbgr8u4vq82kk"]
+
+[ext_resource type="Script" path="res://nodes/screens/doodad.gd" id="1_db6sf"]
+
+[node name="doodad" type="ColorRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_db6sf")

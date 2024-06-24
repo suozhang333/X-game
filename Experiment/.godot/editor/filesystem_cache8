@@ -1,0 +1,11 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1719201933
+::res://experiment/::1719201933
+::res://images/::1719198886
+icon.svg::CompressedTexture2D::2240953478362041479::1719198690::1719198886::1::::<><>::
+::res://nodes/::1719198862
+::res://nodes/screens/::1719201797
+play_screen.gd::GDScript::-1::1719201758::0::1::::<>GameScreen<>::
+play_screen.tscn::PackedScene::7693602631031199502::1719201797::0::1::::<><>::uid://cadnw2lma55dd::::res://nodes/screens/screen.tscn<>res://nodes/screens/play_screen.gd
+Screen.gd::GDScript::-1::1719198832::0::1::::GameScreen<>MarginContainer<>::
+screen.tscn::PackedScene::4779864544689994641::1719201797::0::1::::<><>::res://nodes/screens/Screen.gd
