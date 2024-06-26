@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="GameLevel" load_steps=2 format=3 uid="uid://b2s37cpqqic2o"]
+
+[ext_resource type="Script" path="res://resources/levels/level.gd" id="1_7nt2b"]
+
+[resource]
+script = ExtResource("1_7nt2b")
+name = "Level 1"
+width = 7
+layout = Array[int]([0, 1, 1, 1, 1, 1, 2, 7, 8, 8, 8, 8, 8, 3, 7, 8, 8, 8, 8, 8, 3, 7, 8, 8, 8, 8, 8, 3, 7, 8, 8, 8, 8, 8, 3, 7, 8, 8, 8, 8, 8, 3, 6, 5, 5, 5, 5, 5, 4])

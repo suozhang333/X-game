@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cf0kve7f1hkvw"]
 
 [ext_resource type="Script" path="res://experiments/nodes_experiment.gd" id="1_scdu8"]
-[ext_resource type="PackedScene" uid="uid://bbgr8u4vq82kk" path="res://nodes/screens/doodad.tscn" id="2_6hbc8"]
+[ext_resource type="PackedScene" uid="uid://bbgr8u4vq82kk" path="res://experiments/doodad.tscn" id="2_6hbc8"]
 
 [node name="NodesExperiment" type="Node2D"]
 script = ExtResource("1_scdu8")

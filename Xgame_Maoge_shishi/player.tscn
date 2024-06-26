@@ -1,0 +1,62 @@
+[gd_scene load_steps=12 format=3 uid="uid://c3nt11bwcd520"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_gcjif"]
+[ext_resource type="Texture2D" uid="uid://clddd6xvfuben" path="res://images/run_1.png" id="1_ibrq0"]
+[ext_resource type="Texture2D" uid="uid://b7hwmtrwu8jpn" path="res://images/run_2.png" id="2_jyq3v"]
+[ext_resource type="Texture2D" uid="uid://bho1w5joos6yo" path="res://images/run_3.png" id="3_fm8f7"]
+[ext_resource type="Texture2D" uid="uid://b5ln2kv1bvpnn" path="res://images/run_4.png" id="4_yd4qw"]
+[ext_resource type="Texture2D" uid="uid://bm8gmnsfoffwd" path="res://images/run_5.png" id="5_o1kti"]
+[ext_resource type="Texture2D" uid="uid://cg564jdewc1xs" path="res://images/run_6.png" id="6_ndgdn"]
+[ext_resource type="Texture2D" uid="uid://cfcoq4eiyl2q7" path="res://images/run_7.png" id="7_jibay"]
+[ext_resource type="Texture2D" uid="uid://bfvbnwtmprgge" path="res://images/run_8.png" id="8_y4bjk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m2co2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ibrq0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jyq3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fm8f7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yd4qw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_o1kti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ndgdn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jibay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_y4bjk")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kk3yc"]
+size = Vector2(51, 45)
+
+[node name="Player" type="Area2D"]
+position = Vector2(220, 116)
+script = ExtResource("1_gcjif")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_m2co2")
+animation = &"run"
+frame = 7
+frame_progress = 0.847097
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 21.5)
+shape = SubResource("RectangleShape2D_kk3yc")

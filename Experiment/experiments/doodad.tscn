@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bbgr8u4vq82kk"]
 
-[ext_resource type="Script" path="res://nodes/screens/doodad.gd" id="1_db6sf"]
+[ext_resource type="Script" path="res://experiments/doodad.gd" id="1_db6sf"]
 
 [node name="doodad" type="ColorRect"]
 offset_right = 40.0
