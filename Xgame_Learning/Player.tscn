@@ -1,0 +1,23 @@
+[gd_scene load_steps=10 format=3 uid="uid://do40l7r2oxywo"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_n3f13"]
+[ext_resource type="Texture2D" uid="uid://lbmc1yombpbk" path="res://images/player-idle-1.png" id="2_mpc53"]
+[ext_resource type="Texture2D" uid="uid://cr3r0seqbinvd" path="res://images/player-run-1.png" id="3_sa0e4"]
+[ext_resource type="Texture2D" uid="uid://rc0ptwnmct8t" path="res://images/player/run/player-run-1.png" id="4_d7036"]
+[ext_resource type="Texture2D" uid="uid://dhiyf04lte1ab" path="res://images/player/run/player-run-2.png" id="5_cl5sn"]
+[ext_resource type="Texture2D" uid="uid://1gaxxymh0y5e" path="res://images/player/run/player-run-3.png" id="6_wrtmu"]
+[ext_resource type="Texture2D" uid="uid://yje1am5tfv46" path="res://images/player/run/player-run-4.png" id="7_lpbox"]
+[ext_resource type="Texture2D" uid="uid://xj06v85rxr8t" path="res://images/player/run/player-run-5.png" id="8_84vb1"]
+[ext_resource type="Texture2D" uid="uid://b8wiymxtfxylo" path="res://images/player/run/player-run-6.png" id="9_qid7q"]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_n3f13")
+idle_texture = ExtResource("2_mpc53")
+run_texture = ExtResource("3_sa0e4")
+run_textures = Array[Texture2D]([ExtResource("4_d7036"), ExtResource("5_cl5sn"), ExtResource("6_wrtmu"), ExtResource("7_lpbox"), ExtResource("8_84vb1"), ExtResource("9_qid7q")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(167, 112)
+texture = ExtResource("2_mpc53")
+
+[node name="Timer" type="Timer" parent="."]
