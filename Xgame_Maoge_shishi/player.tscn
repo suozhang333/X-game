@@ -1,11 +1,19 @@
-[gd_scene load_steps=11 format=3 uid="uid://c3nt11bwcd520"]
+[gd_scene load_steps=15 format=3 uid="uid://c3nt11bwcd520"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_gcjif"]
 [ext_resource type="Texture2D" uid="uid://4q3rjcavmhtd" path="res://images/icon.svg" id="2_6s3gt"]
 [ext_resource type="Texture2D" uid="uid://rwllxo0veqsp" path="res://images/Microwaveoven.png" id="3_u6oig"]
+[ext_resource type="Script" path="res://Item.gd" id="4_k6eie"]
+[ext_resource type="Texture2D" uid="uid://y4o6405m8xpj" path="res://images/tinychicken_cooked.png" id="5_mlmdy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kk3yc"]
 size = Vector2(40, 40)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tpks2"]
+radius = 76.5506
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qp1a6"]
+size = Vector2(82, 72)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvl4"]
 size = Vector2(1095, 27.4455)
@@ -21,13 +29,13 @@ size = Vector2(644, 28.4141)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ydjb"]
 size = Vector2(650, 34.8283)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qp1a6"]
-size = Vector2(82, 72)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nkd78"]
+size = Vector2(22, 13)
 
 [node name="Main" type="Node"]
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(576, 155)
+position = Vector2(584, 171)
 script = ExtResource("1_gcjif")
 metadata/_edit_group_ = true
 
@@ -40,82 +48,10 @@ position = Vector2(0, 2)
 scale = Vector2(0.328125, 0.328125)
 texture = ExtResource("2_6s3gt")
 
-[node name="Wall1" type="StaticBody2D" parent="."]
+[node name="Area2DPlayer" type="Area2D" parent="Player"]
 
-[node name="CollisionShape2D_Wall1D" type="CollisionShape2D" parent="Wall1"]
-position = Vector2(572.5, 16.2772)
-shape = SubResource("RectangleShape2D_1bvl4")
-
-[node name="Sprite2D" type="Sprite2D" parent="Wall1"]
-self_modulate = Color(0.393966, 0.719636, 0.943345, 1)
-position = Vector2(576.373, 13.1889)
-rotation = -3.14159
-scale = Vector2(1151.75, -27.3779)
-texture = SubResource("CanvasTexture_md2sw")
-
-[node name="Wall2" type="StaticBody2D" parent="."]
-position = Vector2(0, 620)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D_Wall2" type="CollisionShape2D" parent="Wall2"]
-position = Vector2(575.5, 13.2929)
-shape = SubResource("RectangleShape2D_nxu1l")
-
-[node name="Sprite2D" type="Sprite2D" parent="Wall2"]
-self_modulate = Color(0.393966, 0.719636, 0.943345, 1)
-position = Vector2(576.373, 14.5238)
-rotation = 3.14159
-scale = Vector2(1151.75, -30.0476)
-texture = SubResource("CanvasTexture_md2sw")
-
-[node name="Wall3" type="StaticBody2D" parent="."]
-position = Vector2(0, 620)
-rotation = -1.57079
-
-[node name="CollisionShape2D_Wall4" type="CollisionShape2D" parent="Wall3"]
-process_mode = 4
-position = Vector2(296, 13.791)
-shape = SubResource("RectangleShape2D_bkab7")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Wall3"]
-self_modulate = Color(0.393966, 0.719636, 0.943345, 1)
-position = Vector2(295.018, 13.189)
-rotation = 3.14159
-scale = Vector2(650.927, -27.3779)
-texture = SubResource("CanvasTexture_md2sw")
-
-[node name="Wall4" type="StaticBody2D" parent="."]
-position = Vector2(1124, 620)
-rotation = -1.57079
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D_Wall5" type="CollisionShape2D" parent="Wall4"]
-position = Vector2(296, 14.5861)
-shape = SubResource("RectangleShape2D_3ydjb")
-
-[node name="Sprite2D" type="Sprite2D" parent="Wall4"]
-self_modulate = Color(0.393966, 0.719636, 0.943345, 1)
-position = Vector2(302.567, 15.1913)
-rotation = 3.14159
-scale = Vector2(604.133, -31.3825)
-texture = SubResource("CanvasTexture_md2sw")
-
-[node name="Wall5" type="StaticBody2D" parent="."]
-position = Vector2(1124, 620)
-rotation = -1.57079
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D_Wall5" type="CollisionShape2D" parent="Wall5"]
-position = Vector2(296, 14.5861)
-shape = SubResource("RectangleShape2D_3ydjb")
-
-[node name="Sprite2D" type="Sprite2D" parent="Wall5"]
-self_modulate = Color(0.393966, 0.719636, 0.943345, 1)
-position = Vector2(302.567, 15.1913)
-rotation = 3.14159
-scale = Vector2(604.133, -31.3825)
-texture = SubResource("CanvasTexture_md2sw")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2DPlayer"]
+shape = SubResource("CircleShape2D_tpks2")
 
 [node name="Oven" type="RigidBody2D" parent="."]
 position = Vector2(353, 200)
@@ -128,3 +64,96 @@ shape = SubResource("RectangleShape2D_qp1a6")
 [node name="Sprite2D" type="Sprite2D" parent="Oven"]
 scale = Vector2(2.52941, 2.82143)
 texture = ExtResource("3_u6oig")
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="Wall1" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionShape2D_Wall1D" type="CollisionShape2D" parent="Walls/Wall1"]
+position = Vector2(572.5, 16.2772)
+shape = SubResource("RectangleShape2D_1bvl4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/Wall1"]
+self_modulate = Color(0.393966, 0.719636, 0.943345, 1)
+position = Vector2(576.373, 13.1889)
+rotation = -3.14159
+scale = Vector2(1151.75, -27.3779)
+texture = SubResource("CanvasTexture_md2sw")
+
+[node name="Wall2" type="StaticBody2D" parent="Walls"]
+position = Vector2(0, 620)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D_Wall2" type="CollisionShape2D" parent="Walls/Wall2"]
+position = Vector2(575.5, 13.2929)
+shape = SubResource("RectangleShape2D_nxu1l")
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/Wall2"]
+self_modulate = Color(0.393966, 0.719636, 0.943345, 1)
+position = Vector2(576.373, 14.5238)
+rotation = 3.14159
+scale = Vector2(1151.75, -30.0476)
+texture = SubResource("CanvasTexture_md2sw")
+
+[node name="Wall3" type="StaticBody2D" parent="Walls"]
+position = Vector2(0, 620)
+rotation = -1.57079
+
+[node name="CollisionShape2D_Wall4" type="CollisionShape2D" parent="Walls/Wall3"]
+process_mode = 4
+position = Vector2(296, 13.791)
+shape = SubResource("RectangleShape2D_bkab7")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/Wall3"]
+self_modulate = Color(0.393966, 0.719636, 0.943345, 1)
+position = Vector2(295.018, 13.189)
+rotation = 3.14159
+scale = Vector2(650.927, -27.3779)
+texture = SubResource("CanvasTexture_md2sw")
+
+[node name="Wall4" type="StaticBody2D" parent="Walls"]
+position = Vector2(1124, 620)
+rotation = -1.57079
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D_Wall5" type="CollisionShape2D" parent="Walls/Wall4"]
+position = Vector2(296, 14.5861)
+shape = SubResource("RectangleShape2D_3ydjb")
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/Wall4"]
+self_modulate = Color(0.393966, 0.719636, 0.943345, 1)
+position = Vector2(302.567, 15.1913)
+rotation = 3.14159
+scale = Vector2(604.133, -31.3825)
+texture = SubResource("CanvasTexture_md2sw")
+
+[node name="Wall5" type="StaticBody2D" parent="Walls"]
+position = Vector2(1124, 620)
+rotation = -1.57079
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D_Wall5" type="CollisionShape2D" parent="Walls/Wall5"]
+position = Vector2(296, 14.5861)
+shape = SubResource("RectangleShape2D_3ydjb")
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/Wall5"]
+self_modulate = Color(0.393966, 0.719636, 0.943345, 1)
+position = Vector2(302.567, 15.1913)
+rotation = 3.14159
+scale = Vector2(604.133, -31.3825)
+texture = SubResource("CanvasTexture_md2sw")
+
+[node name="Item" type="RigidBody2D" parent="."]
+position = Vector2(140, 152)
+gravity_scale = 0.0
+script = ExtResource("4_k6eie")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_nkd78")
+
+[node name="Sprite2D" type="Sprite2D" parent="Item"]
+texture = ExtResource("5_mlmdy")
+
+[connection signal="body_entered" from="Player/Area2DPlayer" to="Player" method="_on_body_entered"]
