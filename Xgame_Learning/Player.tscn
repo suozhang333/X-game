@@ -1,23 +1,102 @@
-[gd_scene load_steps=10 format=3 uid="uid://do40l7r2oxywo"]
+[gd_scene load_steps=16 format=3 uid="uid://do40l7r2oxywo"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_n3f13"]
-[ext_resource type="Texture2D" uid="uid://lbmc1yombpbk" path="res://images/player-idle-1.png" id="2_mpc53"]
-[ext_resource type="Texture2D" uid="uid://cr3r0seqbinvd" path="res://images/player-run-1.png" id="3_sa0e4"]
-[ext_resource type="Texture2D" uid="uid://rc0ptwnmct8t" path="res://images/player/run/player-run-1.png" id="4_d7036"]
-[ext_resource type="Texture2D" uid="uid://dhiyf04lte1ab" path="res://images/player/run/player-run-2.png" id="5_cl5sn"]
-[ext_resource type="Texture2D" uid="uid://1gaxxymh0y5e" path="res://images/player/run/player-run-3.png" id="6_wrtmu"]
-[ext_resource type="Texture2D" uid="uid://yje1am5tfv46" path="res://images/player/run/player-run-4.png" id="7_lpbox"]
-[ext_resource type="Texture2D" uid="uid://xj06v85rxr8t" path="res://images/player/run/player-run-5.png" id="8_84vb1"]
-[ext_resource type="Texture2D" uid="uid://b8wiymxtfxylo" path="res://images/player/run/player-run-6.png" id="9_qid7q"]
+[ext_resource type="Texture2D" uid="uid://ckqkl3letwaqf" path="res://images/Sunny-land-assets-files/PNG/spritesheets/player-idle.png" id="2_d538p"]
+[ext_resource type="PackedScene" uid="uid://cxmy7cafh5nsk" path="res://Platform.tscn" id="4_foxw2"]
+[ext_resource type="Texture2D" uid="uid://be6eujbnfs6ab" path="res://images/Sunny-land-assets-files/PNG/spritesheets/payer-run.png" id="6_xecjo"]
 
-[node name="Player" type="Node2D"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggf2c"]
+atlas = ExtResource("2_d538p")
+region = Rect2(0, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avca5"]
+atlas = ExtResource("2_d538p")
+region = Rect2(33, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2rw6"]
+atlas = ExtResource("2_d538p")
+region = Rect2(66, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0clo"]
+atlas = ExtResource("2_d538p")
+region = Rect2(99, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wh2u2"]
+atlas = ExtResource("6_xecjo")
+region = Rect2(0, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bm0b"]
+atlas = ExtResource("6_xecjo")
+region = Rect2(33, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnra5"]
+atlas = ExtResource("6_xecjo")
+region = Rect2(66, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wu0ws"]
+atlas = ExtResource("6_xecjo")
+region = Rect2(99, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpj33"]
+atlas = ExtResource("6_xecjo")
+region = Rect2(132, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3sivi"]
+atlas = ExtResource("6_xecjo")
+region = Rect2(165, 0, 33, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_atg4l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggf2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avca5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2rw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0clo")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wh2u2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2bm0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnra5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wu0ws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpj33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3sivi")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="Main" type="Node2D"]
+position = Vector2(42, 16)
 script = ExtResource("1_n3f13")
-idle_texture = ExtResource("2_mpc53")
-run_texture = ExtResource("3_sa0e4")
-run_textures = Array[Texture2D]([ExtResource("4_d7036"), ExtResource("5_cl5sn"), ExtResource("6_wrtmu"), ExtResource("7_lpbox"), ExtResource("8_84vb1"), ExtResource("9_qid7q")])
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(167, 112)
-texture = ExtResource("2_mpc53")
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(125, 96)
+sprite_frames = SubResource("SpriteFrames_atg4l")
+animation = &"idle"
+frame_progress = 0.406575
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Platform" parent="." instance=ExtResource("4_foxw2")]
